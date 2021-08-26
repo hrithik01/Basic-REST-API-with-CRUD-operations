@@ -4,6 +4,7 @@ const bodyParser = require("body-parser");
 require("dotenv/config");
 
 const app = express();
+const port = process.env.PORT || 3000;
 app.use(bodyParser.json());
 
 const postsRoute = require("./routes/posts");
@@ -26,4 +27,4 @@ mongoose.connect(
   }
 );
 
-app.listen(3000);
+app.listen(port);
